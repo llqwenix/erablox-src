@@ -2,13 +2,13 @@
 
 <div align="center">
     <p>
-      <h1>BubbaBlox | fixed fr</h1>
+      <h1>Erablox</h1>
     </p>
 </div>
 
-its not recommended to setup bubbablox without a VPS, Domain, game server (opinonal). if you meet those requirement then yes you can run a revival
+its not recommended to setup erablox without a VPS, Domain, game server (opinonal). if you meet those requirement then yes you can run a revival
 
-(original guide by <a href="https://github.com/SrCookie450">SrCookie450</a>, changed and site fixed by <a href="https://github.com/harryzawg">harryzawg</a>, tutorial edited by <a href="https://github.com/unknownluau">unknownluau</a> and <a href="https://github.com/potatoluau">potatoluau</a>)
+(original guide by <a href="https://github.com/SrCookie450">SrCookie450</a>, changed and site fixed by <a href="https://github.com/llqwenix">llqwenix</a>)
 
 ## things you need
 
@@ -24,7 +24,7 @@ its not recommended to setup bubbablox without a VPS, Domain, game server (opino
 - <a href="https://mh-nexus.de/downloads/HxDPortableSetup.zip">(required for patching) HxD</a> {USED FOR PATCHING RCC}
 
 ## hosting suggestions
-- we suggest datalix for vps and spaceship for domain
+- we suggest datalix for vps and namecheap for domain
 --------
 ## cloudflare setup
 
@@ -47,7 +47,7 @@ keep in mind if you see "bad gateway" once finishing. it means cloudflare is get
 - to host a client on localhost you have to go to ```C:\Windows\System32\drivers\etc``` and open hosts file in notepad++ or notepad all work, then you have to scroll to the very end be careful so u dont fuck up some stuff, make the domain 10 letters any domain works just make sure its not a regular domain u use it will probably fuck some shit up.
 - Example: ``127.0.0.1 revival.io``
 
-potatoluau : who hosts client on localhost son get a domain
+llqwenix : who hosts client on localhost son for best use get a domain
 
   
 ## requirements
@@ -87,7 +87,7 @@ to:
 - ```*``` = the name of the database you want to use, if this is your first time installing, use postgres
 - ```**``` = your postgres username, default is postgres if you didn't set any in the setup
 
-- press ```CTRL + H``` and change ```C:\\Users\\Admin\\Desktop\\Revival\\ecsr\\ecsrev-main\\services\\``` to ```C:\\whereever your BubbaBlox folder is\\``` (make sure it's double slashed! so it should look like ```C:\\folder1\\folder2\\```)
+- press ```CTRL + H``` and change ```C:\\uhm\\erablox-src\\``` to ```C:\\whereever your erablox-src folder is\\``` (make sure it's double slashed! so it should look like ```C:\\folder1\\folder2\\```)
 - you should update everything in the appsettings.json file to your configuration.
 - you should also rename ```game-servers.example.json``` in the ```Roblox/Roblox.Website``` folder to just ```game-servers.json```
 - go to the ```renderer``` folder, rename the file named ```config.example.json``` to ```config.json``` and change everything inside of it so it works with your main site and matches your appsettings.json.
@@ -95,11 +95,7 @@ you should change GameServerAuthorization and the Authorization under Render in 
 
 ## setting up thumbnails and frontend
 
-- first off, go into ```Roblox/Roblox.Website/Middleware/CorsMiddleware.cs```, and replace everything that has ```bbblox.org``` in it with your domain, this is so thumbnails can load.
-- go into the ```api``` folder, 
-- create a folder named ```storage``` inside of that api folder,
-- inside the ```storage``` folder you just made, make a folder named ```asset```,
-- then go back to the ```api``` folder, and go into ```public/images```. then, make a folder named ```thumbnails``` and ```groups```.
+- first off, go into ```Roblox/Roblox.Website/Middleware/CorsMiddleware.cs```, and replace everything that has ```erablx.lol``` in it with your domain, this is so thumbnails can load.
 - open Command Prompt and use CD to go into the ```admin``` folder, then run ```npm i``` and ```npm run build```
 - go to ```2016-roblox-main``` and rename the file named config.example.json to config.json.
 - replace ```your.domain``` with your actual domain inside of that config.json file.
@@ -119,7 +115,7 @@ you should change GameServerAuthorization and the Authorization under Render in 
 - the reason for this is the way that RCC was compiled, it was set to use Roblox's domain which is 10 characters. just replace it with your 10 char domain (CTRL + R, then do bbblox.org as the string then replace it with your domain. make sure your direction is all)
 - do the same for the client.
 - also, change the domain in AppSettings.xml to your domain. (for clients and RCC)
-- **if you decide to use your own RCC/client, you will have to add the hash of the client in ClientData.cs under ```Roblox/Roblox.Website/Controllers``` and also search for NS1 and replace your domain with erablx.lol for NS1, NS2 and NS3. [example](https://zawg.ca/assets/photos/demo1.png)**
+- **if you decide to use your own RCC/client, you will have to add the hash of the client in ClientData.cs under ```Roblox/Roblox.Website/Controllers``` and also search for NS1 and replace your domain with erablx.lol for NS1, NS2 and NS3. [example](https://erablx.lol/assets/photos/demo1.png)**
 
 ## RCC access/settings keys
 
@@ -144,7 +140,7 @@ you should change GameServerAuthorization and the Authorization under Render in 
 
 ## the site should be setup at this point!
 
-- go into your main folder, run ```runall.bat```, and when everything starts, go to your site at ```http://localhost```.
+- go into your main folder, run ```runall.bat```, and when everything starts, go to your site at ```http://your.domain```.
 - sign up for an account with the name ```ROBLOX``` or whatever you want, does not matter. then go to /admin, and go to create player under Users, put ID 2500, the name as ```UGC``` and a random password, then go to that user on the admin panel and click Nullify Password.
 **if you sign up and it takes around 15-20 seconds and throws an error, try just logging in with the account you created. this happens because it cannot render your avatar, so this will not happen once your renderer is fixed.**
 - go back to Create Player and set the ID to 12, and the name as ```BadDecisions```, make the password hard or do Nullify Password on it.
@@ -154,6 +150,7 @@ you should change GameServerAuthorization and the Authorization under Render in 
 
 ## client (game join)
 
+- patch client like you do it with RCCService
 - go to /game/get-join-script?placeid=(the place you want to join)
 - then use Command Prompt and use CD to go into the client's directory in Command Prompt, then do CLIENTNAME.exe (paste everything in the get join script endpoint after the client exe)
   
@@ -171,6 +168,3 @@ you should change GameServerAuthorization and the Authorization under Render in 
 - this COULD be one of many things: you have not forwarded your allowed network ports through your router/firewall, or updated your GSIPAddress (your/your servers public IP) in the appsettings. you should also check if your RCC is starting successfully, if it is and it loads the game, then it's a port/ip issue or something else
 ## it says CURL error and prints a bunch of text, ini and dmp files, or says 400 Bad Request a bunch of times:
 - go to ```%localappdata%\Roblox\logs``` and delete everything, this happens when there are dump files in the directory
-## i will add more here if more people have issues.
-
-higu
