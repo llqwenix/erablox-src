@@ -1,0 +1,11 @@
+{
+    "rcc": "C:\\uhm\\erablox-src\\RCCService",
+    "rccexe": "RCCService.exe",
+    "authorization": "rccautherabloxyayfinnaly",
+    "baseUrl": "https://erablx.lol",
+    "rccPort": 64989,
+    "port": 3040,
+    "websiteBotAuth": "8ew3GkxjdWApV5YNRCjEOnCATCQGVmnxIkFi7m3Sbwa5pQ8P",
+    "thumbnailWebsocketPort": 3189,
+    "webhook": "YourWebhook"
+}
